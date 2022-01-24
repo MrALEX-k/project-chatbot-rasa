@@ -1,31 +1,21 @@
-## greeting
+## greet
 * greet
   - utter_greet
-* mood_great
-  - utter_happy
 
-## sad path 1
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* affirm
-  - utter_happy
+## make will act
+* make_will
+  - utter_make_will_reply
 
-## sad path 2
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* deny
-  - utter_goodbye
+## inherit act
+* inherit
+  - utter_inherit_reply
 
-## say goodbye
-* goodbye
-  - utter_goodbye
+## accident act
+* accident
+  - utter_accident_reply
+* compensation
+  - utter_compensation_reply
 
-## bot challenge
-* bot_challenge
-  - utter_iamabot
+## unknown & contact
+* contact / unknown_ans
+  - utter_contact

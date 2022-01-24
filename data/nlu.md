@@ -1,56 +1,40 @@
 ## intent:greet
-- hey
-- hello
-- hi
-- good morning
-- good evening
-- hey there
+- สวัสดีครับ
 
-## intent:goodbye
-- bye
-- goodbye
-- see you around
-- see you later
+## intene:FAQ
+- มีเรื่องจะสอบถาม
+- มีปัญหา
 
-## intent:affirm
-- yes
-- indeed
-- of course
-- that sounds good
-- correct
+## intent:contact
+- ติดต่อเจ้าหน้าที่
+- ติดต่อทางไหนได้บ้างครับ
 
-## intent:deny
-- no
-- never
-- I don't think so
-- don't like that
-- no way
-- not really
+## intent:make_will
+- ทำพินัยกรรมยัทำพินัยกรรมยังไง
+- ยกมรดกให้ยังไง
+- แบ่งมรดกยังไง
 
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
+## intent:inherit
+- รับมรดกอย่างไร
+- ไปรับมรดกยังไง
+- ไปรับมรดกยังไง
 
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
+## intent:accident
+- ทำงานแล้วนิดขาด
+- อุบัติเหตุ
+- แขนขาด
+- ขาขาด
+- ตาบอด
+- หูหาย
+- หูหนวก
+- รถชน
+- พิการ
 
-## intent:bot_challenge
-- are you a bot?
-- are you a human?
-- am I talking to a bot?
-- am I talking to a human?
+## intent:compensation
+- ผมจะได้เงินเท่าไหร่
+- ผมจะได้รับเงินชดเชยเท่าไหร่
+
+## intent:unknown_ans
+- ไม่เข้าใจ
+- อิหยังวะ
+- ไม่รู้เรื่องอ่ะ
