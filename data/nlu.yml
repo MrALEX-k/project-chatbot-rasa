@@ -1,0 +1,89 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - สวัสดี
+    - ว่าไง
+    - อรุณสวัสดิ์
+    - โย่
+
+- intent: goodbye
+  examples: |
+    - ไว้เจอกัน
+    - บาย
+
+- intent: affirm
+  examples: |
+    - ช่วยได้เยอะเลย
+    - ขอบคุณนะ
+    - ดีขึ้นเยอะเลย
+
+- intent: deny
+  examples: |
+    - ไม่เลย
+    - ยังเลย
+
+- intent: mood_great
+  examples: |
+    - วันนี้มันดีสุดๆเลย
+    - โคตรโชคดีเลยวันนี้
+    - ก็ดี
+
+- intent: mood_unhappy
+  examples: |
+    - ไม่ค่อยโอเท่าไหร่
+    - เฟลๆ นิดนึง
+    - แย่อยู่
+    - ซึมนิดๆ
+
+- intent: bot_challenge
+  examples: |
+    - คุณเป็นใครอะ
+    - คุยกับใครอยู่
+
+
+- intent: FAQ
+  examples: |
+    - มีเรื่องจะสอบถาม
+    - มีปัญหา
+
+- intent: contact
+  examples: |
+    - ติดต่อเจ้าหน้าที่
+    - ติดต่อทางไหนได้บ้างครับ
+
+- intent: make_will
+  examples: |
+    - ทำพินัยกรรมยัทำพินัยกรรมยังไง
+    - ยกมรดกให้ยังไง
+    - แบ่งมรดกยังไง
+
+- intent: inherit
+  examples: |
+    - รับมรดกอย่างไร
+    - ไปรับมรดกยังไง
+    - ไปรับมรดกยังไง
+
+- intent: accident
+  examples: |
+    - ทำงานแล้วนิดขาด
+    - อุบัติเหตุ
+    - แขนขาด
+    - ขาขาด
+    - ตาบอด
+    - หูหาย
+    - หูหนวก
+    - รถชน
+    - พิการ
+
+- intent: compensation
+  examples: |
+    - ผมจะได้เงินเท่าไหร่
+    - ผมจะได้รับเงินชดเชยเท่าไหร่
+
+- intent: unknown_ans
+  examples: |
+    - ไม่เข้าใจ
+    - อิหยังวะ
+    - ไม่รู้เรื่องอ่ะ

@@ -1,5 +1,13 @@
+version: "3.0"
+
 intents:
   - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
   - contact
   - FAQ
   - make_will
@@ -7,11 +15,26 @@ intents:
   - accident
   - compensation
   - unknown_ans
-  
+
 responses:
   utter_greet:
-  - text: "สวัสดีครับ สอบถามเรื่องอะไรครับ"
+  - text: "สวัสดี! วันนี้เป็นไงมั่ง"
 
+  utter_cheer_up:
+  - text: "ให้พี่ลี่ช่วยคุณ:"
+    image: "https://i.pinimg.com/564x/1b/89/75/1b897559c82e46c4978e225e71c3ab7e.jpg"
+
+  utter_did_that_help:
+  - text: "ดีขึ้นแล้วสินะ"
+
+  utter_happy:
+  - text: "ดีมากพวก ขอให้เป็นวันที่ดีไอหนุ่ม"
+
+  utter_goodbye:
+  - text: "ไว้เจอกัน บาย"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
   utter_contact:
   - text: "ติดต่อเจ้าหน้าที่ 1506"
 
