@@ -4,30 +4,30 @@ stories:
 
 - story: happy path
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: greet_th
+  - action: utter_greet_th
   - intent: mood_great
   - action: utter_happy
 
 - story: sad path 1
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: greet_th
+  - action: utter_greet_th
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
-  - intent: affirm
+  - intent: affirm_th
   - action: utter_happy
 
 - story: sad path 2
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: greet_th
+  - action: utter_greet_th
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: deny_th
+  - action: utter_goodbye_th
   
 - story: make will act
   steps:
@@ -50,3 +50,23 @@ stories:
   steps:
   - intent: unknown_ans
   - action: utter_contact
+
+- story: play rock paper scissors
+  steps:
+  - intent: greet
+  - action: utter_play
+  - intent: inform
+  - action: action_play_rps
+  - action: utter_play_again
+
+- story: play again
+  steps:
+  - action: utter_play_again
+  - intent: affirm
+  - action: utter_play
+
+- story: don't play again
+  steps:
+  - action: utter_play_again
+  - intent: deny
+  - action: utter_goodbye

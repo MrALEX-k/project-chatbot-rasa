@@ -1,13 +1,13 @@
 version: "3.0"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
+  - greet_th
+  - goodbye_th
+  - affirm_th
+  - deny_th
   - mood_great
   - mood_unhappy
-  - bot_challenge
+  - bot_challenge_th
   - contact
   - FAQ
   - make_will
@@ -15,9 +15,15 @@ intents:
   - accident
   - compensation
   - unknown_ans
+  - inform
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
 
 responses:
-  utter_greet:
+  utter_greet_th:
   - text: "สวัสดี! วันนี้เป็นไงมั่ง"
 
   utter_cheer_up:
@@ -30,11 +36,12 @@ responses:
   utter_happy:
   - text: "ดีมากพวก ขอให้เป็นวันที่ดีไอหนุ่ม"
 
-  utter_goodbye:
+  utter_goodbye_th:
   - text: "ไว้เจอกัน บาย"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
   utter_contact:
   - text: "ติดต่อเจ้าหน้าที่ 1506"
 
@@ -49,7 +56,19 @@ responses:
 
   utter_compensation_reply:
   - text: "เงินต่ำสุด (คิดจากค่าจ้างวันละ 300 บาท) ที่จะได้รับคือ 5,460 บาท/เดือน เป็นเวลา 10 ปี เงินทดแทนรวมที่จะได้รับคือ 655,200 บาท\nเงินสูงสุด (คิดจากเงิน 20,000 บาท) ที่จะได้รับคือ 14,000 บาท/เดือน เป็นเวลา 10 ปี เงินทดแทนรวมที่จะได้รับคือ 1.68 ล้านบาท"
+  
+  utter_play:
+  - text: "Type 'rock', 'paper' or 'scissors' to play."
 
+  utter_play_again:
+  - text: "Do you want play again?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+
+actions:
+  - action_play_rps
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
