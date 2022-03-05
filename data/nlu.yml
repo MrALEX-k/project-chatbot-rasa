@@ -88,12 +88,6 @@ nlu:
     - อิหยังวะ
     - ไม่รู้เรื่องอ่ะ
 
-- intent: inform
-  examples: |
-    - [rock](choice)
-    - [paper](choice)
-    - [scissors](choice)
-
 - intent: greet
   examples: |
     - hey
@@ -148,3 +142,33 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- regex: zip_code
+  examples: |
+    - \d{5}
+
+- intent: ask_name
+  examples: |
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+
+- intent: ask_weather
+  examples: |
+    - What's the weather like today?
+    - Does it look sunny outside today?
+    - Oh, do you mind checking the weather for me please?
+    
+- intent: ask_name_th
+  examples: |
+    - คุณชื่ออะไร
+    - ขอทราบชื่อคุณได้ไหม
+    - ให้เรียกคุณว่าอะไร
+    - คุณมีชื่อมั้ย
+
+- intent: ask_weather_th
+  examples: |
+    - สภาพอากาศวันนี้เป็นยังไง
+    - วันนี้แดดจัดไหม
+    - ช่วยตรวจสอบสภาพอากาศให้ฉันหน่อยได้ไหม
