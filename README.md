@@ -1,5 +1,7 @@
 # project-chatbot-rasa
-โปรเจคแชทบอท นศ DSBA KMITL 62070266&amp;62070267
+โปรเจคแชทบอท นศ DSBA KMITL
+62070266 Ratchanon
+62070267 Rung
 
 ### Requirements:
 -rasa 3.x </br>
