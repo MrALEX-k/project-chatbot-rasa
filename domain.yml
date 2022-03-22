@@ -24,6 +24,39 @@ intents:
   - ask_weather
   - ask_name_th
   - ask_weather_th
+  - ask_favcartoon_th
+  - ask_favmovie_th
+  - ask_favtvseries_th
+  - ask_reccartoon_th
+  - ask_recmovie_th
+  - ask_recseries_th
+  - ask_favcartoon
+  - ask_favmovie
+  - ask_favseries
+  - whatyoudoin
+  - whatyoudoin_th
+  - accomodation_enquiry
+  - accomodation_enquiry_th
+  - restaurant_enquiry
+  - restaurant_enquiry_th
+  - fav_movie
+
+entities:
+  - country_th
+  - country
+  - capitalcities
+  - capitalcities_th
+  - weekdays
+  - weekdays_th
+  - months
+  - months_th
+  - faculties
+  - faculties_th
+  - movies
+  - movies_th
+
+slot: {}
+
 
 responses:
   utter_greet_th:
