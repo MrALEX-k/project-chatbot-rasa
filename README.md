@@ -10,7 +10,7 @@
 
 ## How to run nlu server to parse text
 
-1) rasa run --enable-api -m models/nlu-20220322-140907-rude-buyer.tar.gz
+1) rasa run --enable-api -m nlu-20220323-135458-moist-supervisor.tar.gz
 2) send *POST* request to http://localhost:5005/model/parse in **JSON** format
 </br></br>
 Examples:</br>
