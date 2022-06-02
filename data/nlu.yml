@@ -1,253 +1,67 @@
 version: "3.0"
 
 nlu:
-- intent: greet_th
+- intent: payment_method
   examples: |
-    - สวัสดี
-    - ว่าไง
-    - อรุณสวัสดิ์
-    - โย่
-- intent: goodbye_th
+    - ช่องทางการชำระเงินสมทบกองทุนเงินทดแทนมีกี่ช่องทาง
+    - ชำระได้ที่ไหนบ้าง
+    - จ่ายค่าเงินสมทบกองทุนเงินทดแทนได้ยังไงบ้าง
+    - ชำระเงินได้ช่องทางไหน
+
+- intent: method_bank
   examples: |
-    - ไว้เจอกัน
-    - บาย
-- intent: affirm_th
+    - นายจ้างสามารถชำระเงินสมทบกองทุนเงินทดแทนผ่านเคาน์เตอร์ธนาคารและหน่วยบริการได้ที่ไหนบ้าง
+    - ชำระผ่านธนาคารใดได้บ้าง
+    - จ่ายที่ธนาคารหรือที่ไหนได้บ้าง
+
+- intent: method_epay
   examples: |
-    - ช่วยได้เยอะเลย
-    - ขอบคุณนะ
-    - ดีขึ้นเยอะเลย
-- intent: deny_th
+    - นายจ้างต้องการชำระเงินสมทบกองทุนเงินทดแทนให้กับสำนักงานประกันสังคมผ่านช่องทางอินเตอร์เน็ต (e-payment) ต้องทำอย่างไร
+    - จะชำระผ่านอินเตอร์เน็ตต้องทำไรบ้าง
+    - ขอวิธีชำระผ่าน e-pay
+
+- intent: epay_locate
   examples: |
-    - ไม่เลย
-    - ยังเลย
-- intent: mood_great
+    - มีธนาคาร/หน่วยบริการ ที่ร่วมให้บริการชำระเงินสมทบกองทุนเงินทดแทน ผ่านช่องทางอินเตอร์เน็ต (e-payment) ให้กับสำนักงานประกันสังคม ที่ไหนบ้าง
+    - ธนาคารใดบ้างที่ชำระ e-pay ได้
+    - ชำระผ่านช่องทางอินเตอร์เน็ตได้ที่ใด
+
+- intent: epay_receipt
   examples: |
-    - วันนี้มันดีสุดๆเลย
-    - โคตรโชคดีเลยวันนี้
-    - ก็ดี
-- intent: mood_unhappy
+    - นายจ้างชำระเงินสมทบผ่านระบบอินเตอร์เน็ต (e-payment) เรียบร้อยแล้วจะได้รับใบเสร็จรับเงินอย่างไร
+    - รับใบเสร็จหลังชำระผ่านระบบอินเตอร์เน็ตได้ที่ไหน
+
+- intent: epay_tax
   examples: |
-    - ไม่ค่อยโอเท่าไหร่
-    - เฟลๆ นิดนึง
-    - แย่อยู่
-    - ซึมนิดๆ
-- intent: bot_challenge_th
+    - นายจ้างชำระเงินสมทบกองทุนเงินทดแทนผ่านธนาคารและหน่วยบริการมีค่าธรรมเนียมการให้บริการหรือไม่
+    - มีค่าธรรมเนียมมั้ยอะ
+    - ค่าธรรมเนียมเท่าไหร่หรอ
+    - มีค่าธรรมเนียมในการชำระเงินหรือไม่
+
+- intent: receive_compensation
   examples: |
-    - คุณเป็นใครอะ
-    - คุยกับใครอยู่
-- intent: FAQ
+    - ช่องทางการรับเงินสมทบกองทุนเงินทดแทนมีกี่ช่องทาง
+    - สามารถรับเงินได้ที่ไหนบ้าง
+    - จะได้รับเงินผ่านทางไหน
+
+- intent: receive_bank
   examples: |
-    - มีเรื่องจะสอบถาม
-    - มีปัญหา
-- intent: contact
+    - การรับเงินทดแทนผ่านธนาคาร มีธนาคารอะไรบ้าง
+    - รับเงินผ่านธนาคารอะไรได้บ้าง
+
+- intent: another_account
   examples: |
-    - ติดต่อเจ้าหน้าที่
-    - ติดต่อทางไหนได้บ้างครับ
-- intent: make_will
+    - การรับเงินทดแทนสามารถนำบัญชีของผู้อื่นมายื่นขอรับเงินได้หรือไม่
+    - ใช้บัญชีคนอื่นมาขอรับแทนได้ไหม
+
+- intent: live_abroad
   examples: |
-    - ทำพินัยกรรมยัทำพินัยกรรมยังไง
-    - ยกมรดกให้ยังไง
-    - แบ่งมรดกยังไง
-- intent: inherit
+    - กรณีลูกจ้าง ผู้มีสิทธิรับเงินอยู่ในต่างประเทศสามารถรับเงินได้หรือไม่
+    - ถ้าอยู่ต่างประเทศ จะรับเงินได้ป่าว
+    - ถ้าอยู่ต่างประเทศหละ
+
+- intent: expired_check
   examples: |
-    - รับมรดกอย่างไร
-    - ไปรับมรดกยังไง
-    - ไปรับมรดกยังไง
-- intent: accident
-  examples: |
-    - ทำงานแล้วนิดขาด
-    - อุบัติเหตุ
-    - แขนขาด
-    - ขาขาด
-    - ตาบอด
-    - หูหาย
-    - หูหนวก
-    - รถชน
-    - พิการ
-- intent: compensation
-  examples: |
-    - ผมจะได้เงินเท่าไหร่
-    - ผมจะได้รับเงินชดเชยเท่าไหร่
-- intent: unknown_ans
-  examples: |
-    - ไม่เข้าใจ
-    - อิหยังวะ
-    - ไม่รู้เรื่องอ่ะ
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-- intent: ask_name
-  examples: |
-    - What is your name?
-    - May I know your name?
-    - What do people call you?
-    - Do you have a name for yourself?
-    - Who are you?
-    - May I ask your name?
-- intent: ask_weather
-  examples: |
-    - What's the weather like today?
-    - Does it look sunny outside today?
-    - Oh, do you mind checking the weather for me please?
-- intent: ask_name_th
-  examples: |
-    - คุณชื่ออะไร
-    - ขอทราบชื่อคุณได้ไหม
-    - ให้เรียกคุณว่าอะไร
-    - คุณมีชื่อมั้ย
-- intent: ask_weather_th
-  examples: |
-    - สภาพอากาศวันนี้เป็นยังไง
-    - วันนี้แดดจัดไหม
-    - ช่วยตรวจสอบสภาพอากาศให้ฉันหน่อยได้ไหม
-- intent: ask_favcartoon_th
-  examples: |
-    - ชอบดูการ์ตูนเรื่องไหน
-    - ชอบการ์ตูนอะไร
-    - ชอบดูการ์ตูนอะไร
-    - ชอบอนิเมะเรื่องไหน
-    - มีการ์ตูนที่ชอบมั้ย
-    - มีอนิเมะที่ชอบมั้ย
-- intent: ask_favmovie_th
-  examples: |
-    - มีหนังที่ชอบมั้ย
-    - ชอบดูหนังเรื่องไหน
-    - ชอบภาพยนต์เรื่องอะไร
-    - มีภาพยนต์ที่ชอบไหม
-- intent: ask_favtvseries_th
-  examples: |
-    - ชอบซีรีส์รื่องไหน
-    - มีซีรีส์ที่ชอบดูไหม
-- intent: ask_reccartoon_th
-  examples: |
-    - ไม่รู้จะดูการ์ตูนไรดี
-    - มีการ์ตูนแนะนำมั้ย
-    - มีการ์ตูนไรดูบ้าง
-    - มีอนิเมะแนะนำมั้ย
-    - แนะนำอนิเมะหน่อย
-    - แนะนำการ์ตูนหน่อย
-- intent: ask_recmovie_th
-  examples: |
-    - ไม่รู้จะดูหนังอะไรดี
-    - แนะนำหนังหน่อย
-    - มีหนังไรแนะนำไหม
-    - ไม่รู้จะดูภาพยนต์อะไรดี
-    - แนะนำภาพยนต์หน่อย
-    - มีภาพยนต์ไรแนะนำไหม
-- intent: ask_recseries_th
-  examples: |
-    - มีซีรีย์อะไรแนะนำมั้ยอะ
-    - แนะนำซีรีย์หน่อย
-    - ไม่รู้จะดูซีรีย์ะอไรดี
-- intent: ask_favcartoon
-  examples: |
-    - What's your favourite cartoon?
-    - What cartoon do you like?
-    - What's your favourite anime?
-    - What anime do you like?
-- intent: ask_favmovie
-  examples: |
-    - What's your favourite movie?
-    - What movie do you like?
-- intent: ask_favseries
-  examples: |
-    - What's your favourite TV series
-    - What TV series do you like?
-- intent: whatyoudoin
-  examples: |
-    - What do you do?
-    - What are you doing?
-    - What is your business?
-    - What do you do for a living?
-    - What are you working on?
-- intent: whatyoudoin_th
-  examples: |
-    - คุณทำงานอะไร
-    - คุณทำอาชีพอะไร
-    - คุณประกอบอาชีพอะไร
-    - คุณทำธุรกิจอะไร
-    - คุณทำงานตำแหน่งอะไร
-- intent: accomodation_enquiry
-  examples: |
-    - Where is the nearest hotel ?
-    - is there a hotel near by ?
-    - Where i fit crash for here ?
-    - i want to get to a hotel
-    - i need to get to a hotel
-    - where can i spend the night ?
-- intent: accomodation_enquiry_th
-  examples: |
-    - โรงแรมที่ใกล้ที่สุดคือโรงแรงอะไร
-    - แถวนี้มีที่พักมั้ย
-    - ฉันจะพักที่ไหนได้บ้างคืนนี้
-    - โรงแรมเออยู่ที่ไหน
-- intent: restaurant_enquiry
-  examples: |
-    - i need to get food
-    - i am hungry
-    - is there a restaurant?
-    - where is the restaurant?
-    - where can i get water
-    - where i fit buy food for here?
-    - is there a food court nearby?
-    - where they sell food?
-    - where can i eat
-    - i need to eat
-    - where can i buy snacks?
-    - i want to buy food
-- intent: restaurant_enquiry_th
-  examples: |
-    - ฉันหิวข้าวมาก
-    - ฉันอยากกินข้าวแล้ว
-    - แถวนี้มีร้านอาหารไหม
-    - ร้านอาหารอยู่ไหน
-    - มีร้านขนมหรือของกินแถวนี้ปะ
-    - โซนของกินอยู่ตรงไหน
-    
+    - กรณีนายจ้าง ลูกจ้าง ผู้มีสิทธิรับเงิน ไม่นำเช็คไปขึ้นเงินภายในระยะเวลา 6 เดือน ทำให้เช็คหมดอายุ หรือทำเช็คหาย จะดำเนินการอย่างไร
+    - ถ้าเช็คหมดอายุ ทำยังไงได้บ้าง
+    - ลืมเอาเช็คไปขึ้นเงินเลย
