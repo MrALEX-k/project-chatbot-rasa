@@ -8,10 +8,13 @@ intents:
   - epay_receipt
   - epay_tax
   - receive_compensation
-  - which_bank
+  - receive_bank
   - another_account
   - live_abroad
   - expired_check
+
+entities:
+  - sentiment
 
 responses:
   utter_payment_method:
