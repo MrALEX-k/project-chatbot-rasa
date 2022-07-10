@@ -1,6 +1,7 @@
 version: "3.0"
 
 intents:
+  - greet
   - payment_method
   - method_bank
   - method_epay
@@ -70,6 +71,8 @@ responses:
   utter_ask_q:
   - text: "มีอะไรให้ช่วยอีกมั้ยคะ"
 
+  utter_greet:
+  - text: "สวัสดีค่ะ มีอะไรให้ทางเราช่วยไหมคะ"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

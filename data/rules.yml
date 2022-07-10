@@ -2,3 +2,8 @@ version: "3.0"
 
 rules:
 
+- rule: ตอบกลับคำทักทาย user หลังจากที่ user กล่าวทักทาย
+  steps:
+  - intent: greet
+  - action: utter_greet
+

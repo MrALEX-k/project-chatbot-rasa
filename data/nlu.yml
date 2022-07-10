@@ -1,6 +1,12 @@
 version: "3.0"
 
 nlu:
+- intent: greet
+  examples: |
+    - สวัสดีครับ
+    - สวัสดีค่ะ
+    - สวัสดี
+
 - intent: payment_method
   examples: |
     - ช่องทางการชำระเงินสมทบกองทุนเงินทดแทนมีกี่ช่องทาง

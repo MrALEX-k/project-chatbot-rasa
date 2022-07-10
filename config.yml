@@ -4,21 +4,21 @@ recipe: default.v1
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
+language: th
 
 pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
+  - name: tokenizer.ThaiTokenizer
   - name: sentiment.SentimentAnalyzer
-  - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
-    analyzer: char_wb
+    analyzer: word
     min_ngram: 1
-    max_ngram: 4
+    max_ngram: 3
   - name: DIETClassifier
     epochs: 100
     constrain_similarities: true
