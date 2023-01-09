@@ -4,13 +4,11 @@
 62070267 Rung
 
 ### Requirements:
--rasa 3.x </br>
--tensorflow </br>
--ujson
+requirements.txt
 
 ## How to run nlu server to parse text
 
-1) rasa run --enable-api -m nlu-20220323-135458-moist-supervisor.tar.gz
+1) rasa run --enable-api -m [MODEL_NAME]
 2) send *POST* request to http://localhost:5005/model/parse in **JSON** format
 </br></br>
 Examples:</br>
