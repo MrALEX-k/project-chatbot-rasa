@@ -15,3 +15,7 @@ Examples:</br>
 ![image](https://user-images.githubusercontent.com/54878524/156889864-5ba8b350-f957-4e21-8ae0-23a4574aff0a.png)</br>
 Response:</br>
 ![image](https://user-images.githubusercontent.com/54878524/156889907-6e68ab80-8268-49f4-8fa6-89237f9e4430.png)
+
+## Features
+1) การตัดคำภาษาไทย (Tokenzation) ใช้ library word_tokenize ของ PyThaiNLP 
+2) การวิเคราะห์อารมณ์จากข้อความของผู้ใช้ (Sentiment Analysis) พัฒนาและฝึกฝนด้วยชุดข้อมูล Wisesight Sentiment Corpus สำหรับภาษาไทย และ Twitter and Reddit Sentimental analysis Dataset(Kaggle) สำหรับข้อมูลภาษาอังกฤษ ด้วยแบบจำลอง Logistics Regression
