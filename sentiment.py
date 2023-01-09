@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from sklearn import *
+
 from rasa.engine.graph import GraphComponent, ExecutionContext
 
 from rasa.shared.nlu.training_data.training_data import TrainingData
@@ -26,7 +28,10 @@ import pickle
 import pandas as pd
 
 from pythainlp.corpus.common import thai_stopwords
+from nltk.corpus import stopwords
+
 from pythainlp import word_tokenize
+from nltk import word_tokenize as token_eng
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
@@ -40,13 +45,6 @@ from pythainlp.util import isthai
 class SentimentAnalyzer(GraphComponent, EntityExtractorMixin):
 
     """A pre-trained sentiment component"""
-
-    name = "sentiment"
-    provides = ["entities"]
-    requires = []
-    defaults = {}
-    language_list = ["en"]
-
     def __init__(self, component_config: Dict[Text, Any]) -> None:
 
         self.component_config = component_config
@@ -86,11 +84,12 @@ class SentimentAnalyzer(GraphComponent, EntityExtractorMixin):
 
         with open('model.pkl' , 'rb') as f:
             model = pickle.load(f)
-
         with open('vectorizer.pkl' , 'rb') as f:
             vectorizer = pickle.load(f)
-
-        sid = SentimentIntensityAnalyzer()
+        with open('model_eng.pkl' , 'rb') as f:
+            model_eng = pickle.load(f)
+        with open('vectorizer_eng.pkl' , 'rb') as f:
+            vectorizer_eng = pickle.load(f)
 
         for message in messages:
             lang = 'en'
@@ -98,26 +97,32 @@ class SentimentAnalyzer(GraphComponent, EntityExtractorMixin):
                 if isthai(i):
                     lang = 'th'
                     break
-
             if lang == 'th':
                 list_word = word_tokenize(message.get(TEXT))
 
-                stopwords = list(thai_stopwords())
-                list_word = [i for i in list_word if i not in stopwords]
+                stop = list(thai_stopwords())
+                list_word = [i for i in list_word if i not in stop]
 
                 list_word = " ".join(token for token in list_word)
 
                 test_tf = vectorizer.transform([list_word])
                 res = model.predict(test_tf)
-                key, value = res[0], None
+                res_val = model.predict_proba(test_tf)
+                key, value = res[0], str(max(res_val[0]))
 
             elif lang == 'en':
-                res = sid.polarity_scores(message.get(TEXT))
-                key, value = max(res.items(), key=lambda x: x[1])
+                list_word = token_eng(message.get(TEXT))
+                stop = list(stopwords.words('english'))
+                list_word = [i for i in list_word if i not in stop]
 
+                list_word = " ".join(token for token in list_word)
+                
+                test_tf = vectorizer_eng.transform([list_word])
+                res = model_eng.predict(test_tf)
+                res_val = model_eng.predict_proba(test_tf)
+                key, value = res[0], str(max(res_val[0]))
             entity = self.convert_to_rasa(key, value, lang)
             message.set("entities", [entity], add_to_output=True)
-
         return messages
 
     def persist(self, file_name, model_dir):
